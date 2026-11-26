@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { Play, X } from "lucide-react";
 import { SectionHeading, CTA, DISPLAY, HERO_TEXT_LIGHT } from "../components/common";
+import { SOCIAL_MEDIA_VIDEO_ID } from "../data";
 
 const VIDEOS = [
-  { id: "wedding", title: "Wedding Highlight Film", thumbnail: "https://images.unsplash.com/photo-1772634734722-631b6978a6e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8M3x8d2VkZGluZyUyMGNvdXBsZSUyMG91dGRvb3IlMjBwb3J0cmFpdHxlbnwxfDB8fHwxNzk1Mjc2MTk3fDA&ixlib=rb-4.1.0&q=80&w=1080&credit=rafasanfilippo" },
-  { id: "food", title: "Food & Restaurant Film", thumbnail: "https://images.unsplash.com/photo-1625861910621-e9385ba1d993?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8M3x8cGxhdGVkJTIwZ291cm1ldCUyMGRpc2glMjByZXN0YXVyYW50fGVufDF8MHx8fDE3OTUyNzYxOTh8MA&ixlib=rb-4.1.0&q=80&w=1080&credit=madebyswish" },
-  { id: "real-estate", title: "Luxury Property Tour", thumbnail: "https://images.unsplash.com/photo-1705321963943-de94bb3f0dd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8Mnx8bW9kZXJuJTIwbGl2aW5nJTIwcm9vbSUyMGludGVyaW9yfGVufDF8MHx8fDE3OTUyNzYxOTd8MA&ixlib=rb-4.1.0&q=80&w=1080&credit=pipcke" },
+  {
+    id: "social-media",
+    title: "Social Media Basics — Beginner's Guide",
+    thumbnail: `https://img.youtube.com/vi/${SOCIAL_MEDIA_VIDEO_ID}/hqdefault.jpg`,
+    youtubeId: SOCIAL_MEDIA_VIDEO_ID,
+  },
 ];
 
 interface VideoPageParams {
@@ -13,7 +17,7 @@ interface VideoPageParams {
 }
 
 export function VideoPage({ params }: { onNavigate: (href: string) => void; params: VideoPageParams }) {
-  const [open, setOpen] = useState<string | null>(null);
+  const [open, setOpen] = useState<(typeof VIDEOS)[number] | null>(null);
 
   const videos = VIDEOS.filter((v) => params.type === "all" || v.id === params.type);
   const list = videos.length ? videos : VIDEOS;
@@ -29,20 +33,20 @@ export function VideoPage({ params }: { onNavigate: (href: string) => void; para
             Video Productions
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-            Cinematic films for weddings, food brands, and real estate.
+            Watch our beginner-friendly guide to social media.
           </p>
         </div>
       </section>
 
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <SectionHeading title="Watch Our Work" subtitle="Select a film to play." />
+          <SectionHeading title="Social Media Guide" subtitle="Select the video to start watching." />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {list.map((v) => (
               <div
                 key={v.id}
                 className="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 cursor-pointer"
-                onClick={() => setOpen(v.id)}
+                onClick={() => setOpen(v)}
               >
                 <img
                   src={v.thumbnail}
@@ -69,12 +73,14 @@ export function VideoPage({ params }: { onNavigate: (href: string) => void; para
           onClick={() => setOpen(null)}
         >
           <div className="relative w-full max-w-2xl" onClick={(e) => e.stopPropagation()}>
-            <div className="aspect-video w-full rounded-xl bg-slate-800 flex flex-col items-center justify-center text-center px-6">
-              <Play className="w-10 h-10 text-[#E8109A] mb-4" />
-              <p className="text-white font-semibold">Showreel coming soon</p>
-              <p className="text-slate-400 text-sm mt-2">
-                Our full film library lives on Instagram — get in touch and we will send the private link.
-              </p>
+            <div className="aspect-video w-full overflow-hidden rounded-xl bg-black">
+              <iframe
+                src={`https://www.youtube.com/embed/${open.youtubeId}?autoplay=1&mute=1&rel=0`}
+                title={open.title}
+                className="h-full w-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
             <button
               onClick={() => setOpen(null)}

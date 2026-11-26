@@ -1,9 +1,10 @@
-export function Logo({ className = "" }: { className?: string; showText?: boolean }) {
+export function Logo({ className = "", showText = true }: { className?: string; showText?: boolean }) {
   return (
     <img
-      src="/orvixframemedia-logo.svg"
-      alt="Orvix Frame Media"
-      className={`h-12 w-auto max-w-[220px] object-contain ${className}`}
+      src="/orvix-logo.png"
+      alt={showText ? "Orvix Frame Media" : "Orvix"}
+      className={`h-14 w-auto max-w-[220px] object-contain ${className}`}
+      draggable={false}
     />
   );
 }

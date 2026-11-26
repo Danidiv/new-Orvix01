@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Phone, MapPin, Clock, Globe, Share2 } from "lucide-react";
-import { CTA, DISPLAY, HERO_TEXT_LIGHT } from "../components/common";
+import { CTA, DISPLAY, HERO_TEXT_LIGHT, HERO_TEXT_DARK } from "../components/common";
 import { SITE, CONTACT_HOURS } from "../data";
 
 async function submitForm(formName: string, fields: Record<string, string>) {
@@ -101,7 +101,7 @@ export function Contact({ onNavigate }: { onNavigate: (href: string) => void }) 
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className={`text-5xl md:text-7xl font-bold leading-[1.02] tracking-tight mb-6 ${HERO_TEXT_LIGHT}`}
+            className={`text-5xl md:text-7xl font-bold leading-[1.02] tracking-tight mb-6 ${HERO_TEXT_DARK}`}
             style={DISPLAY}
           >
             Let's create something great together

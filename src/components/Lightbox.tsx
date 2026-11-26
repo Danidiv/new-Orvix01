@@ -6,6 +6,7 @@ interface LightboxImage {
   id: number;
   image: string;
   title: string;
+  description?: string;
   category?: string;
   video?: boolean;
   youtubeId?: string;
@@ -83,92 +84,47 @@ export function Lightbox({ images, currentIndex, onClose }: LightboxProps) {
   if (!img) return null;
 
   const isVideo = !!img.video && !!img.youtubeId;
-  const categoryLabel = img.category
-    ? img.category
-        .split("-")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ")
-    : "Portfolio";
-  const projectDescription =
-    img.category === "wedding"
-      ? "A timeless wedding story captured through natural emotion, elegant composition, and cinematic detail."
-      : img.category === "corporate"
-        ? "A professional corporate portrait and event story designed to present the brand with confidence and clarity."
-        : img.category === "food"
-          ? "A polished culinary presentation highlighting flavour, texture, atmosphere, and brand character."
-          : "A curated visual story created with thoughtful composition and professional production.";
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[100] overscroll-contain"
+      className="fixed inset-0 z-[100] bg-black/90 overscroll-contain flex items-center justify-center p-3 sm:p-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={img.title}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_35%,rgba(47,134,216,0.16),transparent_32%),linear-gradient(135deg,#090e1a_0%,#111827_55%,#030712_100%)]" />
       <div
-        className="relative h-full flex flex-col lg:flex-row p-3 sm:p-5 lg:p-8 gap-3 sm:gap-5 lg:gap-8"
+        className="relative grid w-full max-w-6xl grid-cols-1 overflow-y-auto rounded-2xl border border-white/10 bg-black shadow-2xl md:grid-cols-[0.85fr_1.15fr] md:overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        <aside className="order-2 lg:order-1 w-full lg:w-[340px] shrink-0 lg:h-full rounded-2xl border border-white/10 bg-slate-950/75 backdrop-blur-xl shadow-2xl px-5 py-4 sm:px-6 sm:py-5 flex lg:flex-col justify-between lg:justify-center">
-          <div>
-            <p className="text-[#6fb3ea] text-[10px] sm:text-xs uppercase tracking-[0.28em] font-semibold mb-2">
-              {categoryLabel}
-            </p>
-            <h2 className="text-white font-bold text-xl sm:text-2xl lg:text-3xl leading-tight mb-2 lg:mb-4">
-              {img.title}
-            </h2>
-            <p className="hidden lg:block text-slate-300 text-sm leading-7">
-              {projectDescription}
-            </p>
-            <div className="hidden lg:grid grid-cols-2 gap-3 mt-6">
-              <div className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3">
-                <p className="text-slate-500 text-[10px] uppercase tracking-wider">Project</p>
-                <p className="text-white text-sm font-medium mt-1">{categoryLabel}</p>
-              </div>
-              <div className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3">
-                <p className="text-slate-500 text-[10px] uppercase tracking-wider">Frame</p>
-                <p className="text-white text-sm font-medium mt-1">{index + 1} / {images.length}</p>
-              </div>
-            </div>
-          </div>
+        <img
+          src={img.image}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full scale-105 object-cover opacity-50 blur-sm"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/40" />
 
-          <div className="flex items-center gap-2 lg:absolute lg:bottom-14 lg:left-14">
-            <button
-              onClick={goPrev}
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-white/15 bg-white/[0.08] hover:bg-white/20 text-white flex items-center justify-center transition-colors"
-              aria-label="Previous image"
-            >
-              <ArrowLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={goNext}
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#1f4fa8] hover:bg-[#2f86d8] text-white flex items-center justify-center transition-colors shadow-lg"
-              aria-label="Next image"
-            >
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-        </aside>
+        <section className="relative z-10 order-2 flex flex-col justify-center px-6 py-8 text-white sm:px-10 md:order-1 md:px-12 md:py-12">
+          <p className="text-xs uppercase tracking-[0.22em] text-[#6fb3ea]">
+            {img.category ? img.category.replace("-", " ") : "Selected work"}
+          </p>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">{img.title}</h2>
+          <p className="mt-5 max-w-lg text-sm leading-7 text-slate-300 sm:text-base">
+            {img.description || "A carefully composed image from the Orvix Frame Media portfolio."}
+          </p>
+          <p className="mt-8 text-xs text-slate-500">
+            {index + 1} of {images.length}
+          </p>
+        </section>
 
-        <main className="order-1 lg:order-2 flex-1 min-h-0 min-w-0 relative flex items-center justify-center rounded-2xl overflow-hidden border border-white/10 bg-black/35 shadow-2xl">
-          <button
-            onClick={onClose}
-            className="absolute top-3 right-3 z-30 p-2.5 sm:p-3 bg-slate-950/70 hover:bg-slate-950/90 backdrop-blur-md rounded-full text-white transition-colors border border-white/10"
-            aria-label="Close lightbox"
-          >
-            <X className="w-5 h-5" />
-          </button>
-
-          <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,.018)_25%,transparent_25%,transparent_75%,rgba(255,255,255,.018)_75%),linear-gradient(45deg,rgba(255,255,255,.018)_25%,transparent_25%,transparent_75%,rgba(255,255,255,.018)_75%)] bg-[length:28px_28px] bg-[position:0_0,14px_14px]" />
-
+        <section className="relative z-10 order-1 flex h-[48vh] min-h-[260px] items-center justify-center bg-black px-10 py-8 sm:h-[58vh] md:order-2 md:h-[80vh] md:max-h-[760px] md:min-h-[420px]">
           {isVideo ? (
-            <div className="relative z-10 w-[calc(100%-24px)] max-w-5xl aspect-video rounded-xl overflow-hidden shadow-2xl bg-black">
+            <div className="aspect-video w-full overflow-hidden rounded-xl bg-black">
               <iframe
-                src={`https://www.youtube.com/embed/${img.youtubeId}?autoplay=1&rel=0`}
+                src={`https://www.youtube.com/embed/${img.youtubeId}?autoplay=1&mute=1&rel=0`}
                 title={img.title}
-                className="w-full h-full"
+                className="h-full w-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
@@ -177,10 +133,33 @@ export function Lightbox({ images, currentIndex, onClose }: LightboxProps) {
             <img
               src={img.image}
               alt={img.title}
-              className="relative z-10 max-w-[calc(100%-24px)] max-h-[calc(100%-24px)] w-auto h-auto object-contain rounded-xl shadow-[0_24px_80px_rgba(0,0,0,.55)]"
+              className="h-full w-full rounded-xl object-contain"
             />
           )}
-        </main>
+
+          <button
+            onClick={goPrev}
+            className="absolute left-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/25"
+            aria-label="Previous image"
+          >
+            <ArrowLeft className="h-5 w-5" />
+          </button>
+          <button
+            onClick={goNext}
+            className="absolute right-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/25"
+            aria-label="Next image"
+          >
+            <ArrowRight className="h-5 w-5" />
+          </button>
+        </section>
+
+        <button
+          onClick={onClose}
+          className="absolute right-3 top-3 z-30 rounded-full bg-black/50 p-2.5 text-white transition-colors hover:bg-white/20"
+          aria-label="Close lightbox"
+        >
+          <X className="h-5 w-5" />
+        </button>
       </div>
     </div>,
     document.body

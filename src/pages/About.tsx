@@ -329,7 +329,7 @@ export function About({ onNavigate }: { onNavigate: (href: string) => void }) {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-[#1f4fa8]/20"
+                  className="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-[#1f4fa8]/20"
                 />
                 <h3 className="font-bold text-slate-900 dark:text-white">{member.name}</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">{member.role}</p>

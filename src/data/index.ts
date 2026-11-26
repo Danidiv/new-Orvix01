@@ -272,8 +272,7 @@ export const PRODUCTION_SERVICES = [
 
 export const PORTFOLIO_CATEGORIES = [
   { key: "all", label: "All" },
-  { key: "corporate", label: "Corporate" },
-  { key: "events", label: "Events" },
+  { key: "corporate", label: "Corporate Event" },
   { key: "real-estate", label: "Real Estate" },
   { key: "product", label: "Product" },
   { key: "food", label: "Food" },
@@ -285,13 +284,14 @@ export const PORTFOLIO_CATEGORIES = [
   { key: "videography", label: "Videography" },
 ];
 
-export const PORTFOLIO_IMAGES = ([
+export const SOCIAL_MEDIA_VIDEO_ID = "nU-IIXBWlS4";
+
+const PORTFOLIO_IMAGE_SEED = [
   { id: 1, category: "wedding", title: "Eternal Moments", image: "https://images.unsplash.com/photo-1763105358968-fbf009067cda?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8MXx8d2VkZGluZyUyMGNvdXBsZSUyMG91dGRvb3IlMjBwb3J0cmFpdHxlbnwxfDB8fHwxNzk1Mjc2MTk3fDA&ixlib=rb-4.1.0&q=80&w=1080&credit=muresan113", video: false },
   { id: 2, category: "corporate", title: "Brand Summit", image: "https://images.unsplash.com/photo-1762968274962-20c12e6e8ecd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8MXx8Y29ycG9yYXRlJTIwY29uZmVyZW5jZSUyMHN0YWdlfGVufDF8MHx8fDE3OTUyNzYxOTd8MA&ixlib=rb-4.1.0&q=80&w=1080&credit=carlosgil83", video: false },
   { id: 3, category: "real-estate", title: "Modern Living", image: "https://images.unsplash.com/photo-1724582586529-62622e50c0b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8MXx8bW9kZXJuJTIwbGl2aW5nJTIwcm9vbSUyMGludGVyaW9yfGVufDF8MHx8fDE3OTUyNzYxOTd8MA&ixlib=rb-4.1.0&q=80&w=1080&credit=prydumanodesign", video: false },
   { id: 4, category: "food", title: "Taste of Summer", image: "https://images.unsplash.com/photo-1616671276441-2f2c277b8bf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8MXx8cGxhdGVkJTIwZ291cm1ldCUyMGRpc2glMjByZXN0YXVyYW50fGVufDF8MHx8fDE3OTUyNzYxOTh8MA&ixlib=rb-4.1.0&q=80&w=1080&credit=delightindee", video: false },
   { id: 5, category: "product", title: "Pure Essence", image: "https://images.unsplash.com/photo-1773305676182-5f34519e11b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8MXx8c2tpbmNhcmUlMjBwcm9kdWN0JTIwc3R1ZGlvJTIwc2hvdHxlbnwxfDB8fHwxNzk1Mjc2MTk4fDA&ixlib=rb-4.1.0&q=80&w=1080&credit=pragatichoudhari", video: false },
-  { id: 6, category: "events", title: "Night Gala", image: "https://images.unsplash.com/photo-1542732351-fa2c82b0c746?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8MXx8ZXZlbnQlMjBnYWxhJTIwZXZlbmluZyUyMHN0YWdlJTIwbGlnaHRpbmd8ZW58MXwwfHx8MTc5NTI3NjE5OHww&ixlib=rb-4.1.0&q=80&w=1080&credit=jawis", video: false },
   { id: 7, category: "yacht", title: "Ocean Dream", image: "https://images.unsplash.com/photo-1605387202149-47169c4ea58a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8MXx8eWFjaHQlMjBzYWlsaW5nJTIwc3Vuc2V0JTIwb2NlYW58ZW58MXwwfHx8MTc5NTI3NjE5OHww&ixlib=rb-4.1.0&q=80&w=1080&credit=mawiswiss", video: false },
   { id: 8, category: "tourism", title: "Mountain Escape", image: "https://images.unsplash.com/photo-1765574781646-b3f20b29e2e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8MXx8bW91bnRhaW4lMjBsYW5kc2NhcGUlMjB0cmF2ZWwlMjBkZXN0aW5hdGlvbnxlbnwxfDB8fHwxNzk1Mjc2MTk4fDA&ixlib=rb-4.1.0&q=80&w=1080&credit=jvmarcilio", video: false },
   { id: 9, category: "birthday", title: "Golden Celebration", image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8MXx8YmlydGhkYXklMjBwYXJ0eSUyMGNlbGVicmF0aW9uJTIwYmFsbG9vbnN8ZW58MXwwfHx8MTc5NTI3NjE5OHww&ixlib=rb-4.1.0&q=80&w=1080&credit=adigold1", video: false },
@@ -302,7 +302,7 @@ export const PORTFOLIO_IMAGES = ([
   { id: 14, category: "food", title: "Street Flavors", image: "https://images.unsplash.com/photo-1552912470-ee2e96439539?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8MXx8c3RyZWV0JTIwZm9vZCUyMG1hcmtldCUyMHZpYnJhbnQlMjBkaXNoZXN8ZW58MXwwfHx8MTc5NTI3NjE5OXww&ixlib=rb-4.1.0&q=80&w=1080&credit=thevernon", video: false },
   { id: 15, category: "product", title: "Tech Launch", image: "https://images.unsplash.com/photo-1468495244123-6c6c332eeece?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4NDkzfDB8MXxzZWFyY2h8MXx8dGVjaCUyMGdhZGdldCUyMHByb2R1Y3QlMjBwaG90b2dyYXBoeXxlbnwxfDB8fHwxNzk1Mjc2MTk5fDA&ixlib=rb-4.1.0&q=80&w=1080&credit=oria_hector", video: false },
 
-  // ── Client work supplied by Orvix Frame Media (Corporate category) ──
+  // ── Client work supplied by Orvix Frame Media (Corporate Event category) ──
   { id: 16, category: "corporate", title: "Corporate Portrait Session", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1821-900x1600.webp", video: false },
   { id: 17, category: "corporate", title: "Executive Headshot", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1822-683x969.webp", video: false },
   { id: 18, category: "corporate", title: "Leadership Portrait", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1820-1080x1349.webp", video: false },
@@ -386,7 +386,7 @@ export const PORTFOLIO_IMAGES = ([
   { id: 94, category: "wedding", title: "Bride's Wedding Look", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1715-1080x1331.webp", video: false },
 
   // ── Videography — YouTube feature on social media basics ──
-  { id: 95, category: "videography", title: "Social Media Basics — Beginner's Guide", image: "https://img.youtube.com/vi/nU-IIXBWlS4/maxresdefault.jpg", video: true, youtubeId: "nU-IIXBWlS4" },
+  { id: 95, category: "videography", title: "Social Media Basics — Beginner's Guide", image: `https://img.youtube.com/vi/${SOCIAL_MEDIA_VIDEO_ID}/maxresdefault.jpg`, video: true, youtubeId: SOCIAL_MEDIA_VIDEO_ID },
 
   // ── Food work supplied by Orvix Frame Media ──
   { id: 96, category: "food", title: "Boiled Rice & Meat", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/side-view-boiled-rice-meat-cherries-1067x1600.webp", video: false },
@@ -417,7 +417,93 @@ export const PORTFOLIO_IMAGES = ([
   { id: 121, category: "food", title: "Fried Meat & Pomegranate", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/fried-meat-with-herbs-pomegranate-1489x1600.webp", video: false },
   { id: 122, category: "food", title: "Garden Salad Table", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/fresh-vegetable-salad-table-1067x1600.webp", video: false },
   { id: 123, category: "food", title: "Chicken Gardenblue", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/chicken-gardenblue-with-vegetables-plate-1438x1600.webp", video: false },
-]).filter((item) => item.id <= 15);
+
+  // ── Real Estate work supplied by Orvix Frame Media ──
+  { id: 124, category: "real-estate", title: "Modern Residence", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1961-1000x1500.webp", video: false },
+  { id: 125, category: "real-estate", title: "Luxury Interior", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1988-1200x1200.webp", video: false },
+  { id: 126, category: "real-estate", title: "Property Exterior", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1967-1000x561.webp", video: false },
+  { id: 127, category: "real-estate", title: "Contemporary Living", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1985-1200x1200.webp", video: false },
+  { id: 128, category: "real-estate", title: "Estate Overview", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1950-1200x800.webp", video: false },
+  { id: 129, category: "real-estate", title: "Architectural Detail", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1968-1000x1500.webp", video: false },
+  { id: 130, category: "real-estate", title: "Private Terrace", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1983-736x1104.webp", video: false },
+  { id: 131, category: "real-estate", title: "Living Space", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1976-1024x1024.webp", video: false },
+  { id: 132, category: "real-estate", title: "Grand Entrance", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1966-900x1600.webp", video: false },
+  { id: 133, category: "real-estate", title: "Master Suite", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1977-1024x1536.webp", video: false },
+  { id: 134, category: "real-estate", title: "Property Tour", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1957-1199x800.webp", video: false },
+  { id: 135, category: "real-estate", title: "Open Plan Interior", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1960-1200x800.webp", video: false },
+  { id: 136, category: "real-estate", title: "Garden View", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1956-1200x800.webp", video: false },
+  { id: 137, category: "real-estate", title: "Kitchen Design", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1986-1200x1200.webp", video: false },
+  { id: 138, category: "real-estate", title: "Residential Exterior", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1951-1200x799.webp", video: false },
+  { id: 139, category: "real-estate", title: "Bedroom Interior", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1965-1000x1500.webp", video: false },
+  { id: 140, category: "real-estate", title: "Property Feature", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1953-1200x799.webp", video: false },
+  { id: 141, category: "real-estate", title: "Living Room", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1959-1199x800.webp", video: false },
+  { id: 142, category: "real-estate", title: "House Exterior", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1952-1200x800.webp", video: false },
+  { id: 143, category: "real-estate", title: "Interior Design", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1955-1200x800.webp", video: false },
+  { id: 144, category: "real-estate", title: "Bathroom Suite", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1964-1000x1500.webp", video: false },
+  { id: 145, category: "real-estate", title: "Property Detail", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1974-235x137.webp", video: false },
+  { id: 146, category: "real-estate", title: "Study Nook", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1979-736x920.webp", video: false },
+  { id: 147, category: "real-estate", title: "Estate Grounds", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1989-1199x669.webp", video: false },
+  { id: 148, category: "real-estate", title: "Dining Area", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1963-1000x1500.webp", video: false },
+  { id: 149, category: "real-estate", title: "Guest Bedroom", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1962-1000x1500.webp", video: false },
+  { id: 150, category: "real-estate", title: "Property Walkthrough", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1973-1200x675.webp", video: false },
+  { id: 151, category: "real-estate", title: "Primary Bedroom", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1978-1199x1499.webp", video: false },
+  { id: 152, category: "real-estate", title: "Hallway View", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1982-736x1313.webp", video: false },
+  { id: 153, category: "real-estate", title: "Modern Kitchen", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1984-1200x1200.webp", video: false },
+  { id: 154, category: "real-estate", title: "Lounge Area", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1987-1200x1200.webp", video: false },
+  { id: 155, category: "real-estate", title: "Exterior Perspective", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1958-1199x800.webp", video: false },
+  { id: 156, category: "real-estate", title: "Property Overview", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1971-1199x668.webp", video: false },
+  { id: 157, category: "real-estate", title: "Architectural Feature", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1975-564x410.webp", video: false },
+  { id: 158, category: "real-estate", title: "Spacious Interior", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1981-896x1280.webp", video: false },
+  { id: 159, category: "real-estate", title: "Residence Exterior", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1954-1200x800.webp", video: false },
+  { id: 160, category: "real-estate", title: "Interior Tour", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1970-1199x683.webp", video: false },
+  { id: 161, category: "real-estate", title: "Property Highlight", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1969-1199x677.webp", video: false },
+  { id: 162, category: "real-estate", title: "Staircase Detail", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1980-897x1600.webp", video: false },
+  { id: 163, category: "real-estate", title: "Real Estate Showcase", image: "https://gtgxzcrrbbcltihxyddz.supabase.co/storage/v1/object/public/user-images/8c7f36e0-58af-439a-8692-2bf3d3447d5d/0072a6f0-0145-413b-99bd-ba444a06da29/img-1949-1080x1080.webp", video: false },
+];
+
+function getLocalPortfolioImage(image: string, category: string) {
+  const fileName = image.split(/[?#]/, 1)[0].split("/").pop() || "";
+  const number = /img-(\d+)-/i.exec(fileName)?.[1];
+  const folder = category === "real-estate" ? "real-estate" : category;
+
+  if (number) return `/images/portfolio/${folder}/IMG_${number}.webp`;
+
+  const stem = fileName.replace(/-\d+x\d+\.webp$/i, "").replace(/\.(jpe?g|webp)$/i, "");
+  const isFoodStockImage =
+    /^(side-view-boiled-rice-meat-cherries|onion-rings-batter-with-sauce-tomato|fried-meat-with-herbs-pomegranate|fresh-vegetable-salad-table|chicken-gardenblue-with-vegetables-plate)$/i.test(
+      stem
+    );
+  return `/images/portfolio/${isFoodStockImage ? "corporate" : folder}/${stem}.webp`;
+}
+
+const localizedPortfolioImages = PORTFOLIO_IMAGE_SEED.map((item) => ({
+  ...item,
+  image: item.id >= 16 && item.id !== 95 ? getLocalPortfolioImage(item.image, item.category) : item.image,
+}));
+
+const PORTFOLIO_DESCRIPTIONS: Record<string, string> = {
+  corporate: "A polished portrait or event moment that puts people and purpose in focus, with a confident professional finish.",
+  "real-estate": "An inviting look at a property's design, light, and spaces, captured to bring its character into focus.",
+  product: "Carefully considered product imagery that brings form, finish, and fine details to the forefront.",
+  food: "A vibrant food photograph celebrating the ingredients, textures, and presentation behind each dish.",
+  yacht: "A cinematic glimpse of life on the water, framed to capture the yacht's character and sense of escape.",
+  tourism: "A sense of place, captured through the colour, atmosphere, and details that make a destination memorable.",
+  birthday: "A joyful celebration captured in colour and detail, preserving the energy of a special day.",
+  wedding: "A heartfelt moment from a wedding story, captured with an elegant eye for emotion and atmosphere.",
+  maternity: "A warm, intimate portrait celebrating the anticipation and connection of a growing family.",
+  videography: "A moving story shaped by thoughtful framing and pacing, bringing each moment to life.",
+};
+
+const portfolioImageGroups = PORTFOLIO_CATEGORIES.slice(1).map(({ key }) =>
+  localizedPortfolioImages.filter((item) => item.category === key)
+);
+
+export const PORTFOLIO_IMAGES = Array.from(
+  { length: Math.max(...portfolioImageGroups.map((group) => group.length)) },
+  (_, index) => portfolioImageGroups.flatMap((group) => (group[index] ? [group[index]] : []))
+)
+  .flat()
+  .map((item) => ({ ...item, description: PORTFOLIO_DESCRIPTIONS[item.category] }));
 
 export const TESTIMONIALS = [
   {
@@ -498,25 +584,25 @@ export const TEAM = [
   {
     name: "Amara Okafor",
     role: "Founder & CEO",
-    image: "https://picsum.photos/seed/founder-portrait-professional-0/600/800",
+    image: "/images/team/amara.webp",
     bio: "Visionary leader with a passion for storytelling and brand strategy.",
   },
   {
     name: "Alex Rivera",
     role: "Creative Director",
-    image: "https://picsum.photos/seed/creative-director-portrait-0/600/800",
+    image: "/images/team/alex.webp",
     bio: "Award-winning designer who shapes the visual identity of every project.",
   },
   {
     name: "Maya Chen",
     role: "Head of Social",
-    image: "https://picsum.photos/seed/social-media-strategist-portrait-0/600/800",
+    image: "/images/team/maya.webp",
     bio: "Data-driven social strategist who grows communities and engagement.",
   },
   {
     name: "Jordan Lee",
     role: "Lead Videographer",
-    image: "https://picsum.photos/seed/videographer-portrait-camera-0/600/800",
+    image: "/images/team/jordan.webp",
     bio: "Cinematic storyteller behind our most powerful brand films.",
   },
 ];
